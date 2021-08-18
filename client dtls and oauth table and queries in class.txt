@@ -1,0 +1,62 @@
+CREATE TABLE oauth_client_details (
+    client_id VARCHAR(256) PRIMARY KEY,
+    resource_ids VARCHAR(256),
+    client_secret VARCHAR(256),
+    scope VARCHAR(256),
+    authorized_grant_types VARCHAR(256),
+    web_server_redirect_uri VARCHAR(256),
+    authorities VARCHAR(256),
+    access_token_validity INTEGER,
+    refresh_token_validity INTEGER,
+    additional_information VARCHAR(4096),
+    autoapprove VARCHAR(256)
+);
+ALTER TABLE oauth_client_details OWNER TO postgres;
+
+CREATE TABLE oauth_client_token (
+    token_id VARCHAR(256),
+    token bytea,
+    authentication_id VARCHAR(256),
+    user_name VARCHAR(256),
+    client_id VARCHAR(256)
+);
+ALTER TABLE oauth_client_token OWNER TO postgres;
+
+CREATE TABLE oauth_access_token (
+    token_id VARCHAR(256),
+    token bytea,
+    authentication_id VARCHAR(256),
+    user_name VARCHAR(256),
+    client_id VARCHAR(256),
+    authentication bytea,
+    refresh_token VARCHAR(256)
+);
+
+
+INSERT INTO
+  oauth_client_details (
+    client_id,
+    client_secret,
+    resource_ids,
+    scope,
+    authorized_grant_types,
+    access_token_validity,
+    refresh_token_validity
+  )
+VALUES
+  (
+    'appclient2',
+    '$2a$04$ZVENvHhtvDKPSgMsP9AK0usr9o3Dpo2G3aSAT1HQZSZUB7CoAP6QC',
+    '',
+    'read,write',
+    'authorization_code,client_credentials,check_token,refresh_token,password',
+    1000000,
+    1000000
+  );
+  
+
+
+
+ClientDetailsUserDetailsService
+
+org.springframework.security.oauth2.provider.client.JdbcClientDetailsService

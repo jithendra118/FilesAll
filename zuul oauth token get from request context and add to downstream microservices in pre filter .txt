@@ -1,0 +1,34 @@
+public class TestFilter extends ZuulFilter {
+
+@Override
+public boolean shouldFilter() {
+
+    return true;
+}
+
+@Override
+public Object run() {
+
+    final RequestContext ctx = RequestContext.getCurrentContext();
+    final HttpServletRequest request = ctx.getRequest();
+ //Here is the authorization header being read.
+    final String xAuth = request.getHeader("Authorization");
+ //Use the below method to add anything to the request header to read downstream. if needed.
+    ctx.addZuulRequestHeader("abc", "abc"); 
+
+    return null;
+}
+
+@Override
+public String filterType() {
+
+    return "pre";
+}
+
+@Override
+public int filterOrder() {
+
+    return 1;
+}
+
+}

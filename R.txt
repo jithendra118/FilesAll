@@ -1,0 +1,2 @@
+RMS - send info from cental to store
+RPS - send info to central from store

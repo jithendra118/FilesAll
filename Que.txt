@@ -1,0 +1,31 @@
+Name 		INTERNAL dATASTRUCTURE.
+Arraylist		array of object,
+linkedlist		linear dATASTRUCTURE (uses double linked list).
+HashMap 		an array and LinkedList data structure internally
+
+hashmap implementation 
+contract with equal and hashcode.
+AutoBoxing concept with override example please look into it.
+
+@QUalifer on configuration classes  
+
+String having name ="grreeeennjj" write a logic to identify 1)repeated values 2)create a string with non duplicate values.
+
+is there any possibilty to add two dbs in one spring boot application. with spring data jpa or with jdbc datasource.
+
+answer : - yes  I will tell you
+
+@Transactional  annotation what is the importance of it with some properties.
+
+hibernate mapping 
+
+how to handle mutliple threads on shared resource.
+
+Design pattern singleton pattern to overcome race condition in thread.
+
+java 8 example like in given list of Employee Object having employee name filter name starts with "S" and get salary for that employee and return as list<String>
+
+equals method  ==  difference in memory wise. where it stored some example
+
+
+
